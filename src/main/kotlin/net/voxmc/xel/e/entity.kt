@@ -38,6 +38,10 @@ inline fun <reified C : XelModule> XelEntity.findModule(): C?
 	return this.findModule(C::class)
 }
 
+inline fun <reified C : XelModule> XelEntity.needModule(): C
+{
+	return this.needModule(C::class)
+}
 
 open class XelEntityBase(final override val uuid: Long) : XelEntity
 {
