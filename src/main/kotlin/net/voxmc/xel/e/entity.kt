@@ -14,11 +14,11 @@ interface XelEntity
 	fun killModule(module: KClass<out XelModule>): XelModule?
 	
 	
-	fun <C : XelModule> findModule(component: KClass<C>): C?
+	fun <C : XelModule> findModule(module: KClass<C>): C?
 	
-	fun <C : XelModule> needModule(component: KClass<C>): C
+	fun <C : XelModule> needModule(module: KClass<C>): C
 	{
-		return requireNotNull(findModule(component))
+		return requireNotNull(findModule(module))
 	}
 }
 
@@ -55,8 +55,8 @@ open class XelEntityBase(final override val uuid: Long) : XelEntity
 		return modules.remove(module)
 	}
 	
-	override fun <C : XelModule> findModule(component: KClass<C>): C?
+	override fun <C : XelModule> findModule(module: KClass<C>): C?
 	{
-		return component.safeCast(modules[component])
+		return module.safeCast(modules[module])
 	}
 }
