@@ -23,11 +23,6 @@ interface XelEntity
 }
 
 
-inline fun <reified C : XelModule> XelEntity.loadModule(component: C): C
-{
-	return component.also(this::loadModule)
-}
-
 inline fun <reified C : XelModule> XelEntity.loadModule(function: () -> C): C
 {
 	return function.invoke().also(this::loadModule)
