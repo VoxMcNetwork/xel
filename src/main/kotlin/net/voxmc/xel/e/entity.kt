@@ -15,6 +15,11 @@ interface XelEntity
 	
 	
 	fun <C : XelModule> findModule(component: KClass<C>): C?
+	
+	fun <C : XelModule> needModule(component: KClass<C>): C
+	{
+		return requireNotNull(findModule(component))
+	}
 }
 
 
