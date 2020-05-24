@@ -6,7 +6,7 @@ plugins {
 
 
 group 'net.voxmc'
-version '0.0.1-SNAPSHOT'
+version '0.0.2-SNAPSHOT'
 
 
 repositories {
@@ -37,8 +37,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/VoxMcNetwork/xel")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = project.hasProperty("githubPackagesUser") ? githubPackagesUser : System.getenv("GITHUB_ACTOR")
+                password = project.hasProperty("githubPackagesAuth") ? githubPackagesAuth : System.getenv("GITHUB_TOKEN")
             }
         }
     }
