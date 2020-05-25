@@ -1,11 +1,10 @@
-package net.voxmc.xel.s
+package net.voxmc.xel.system
 
 import net.voxmc.xel.XelEngine
-import net.voxmc.xel.base.Named
 
-interface XelSystem : Named
+interface XelSystem
 {
-	override val name: String
+	val name: String
 	
 	@Throws(SystemTickException::class)
 	fun tickSystem(engine: XelEngine, delta: Float)

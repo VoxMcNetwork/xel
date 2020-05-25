@@ -1,13 +1,12 @@
 package net.voxmc.xel
 
-import net.voxmc.xel.base.Named
-import net.voxmc.xel.e.Filter
-import net.voxmc.xel.e.XelEntity
-import net.voxmc.xel.e.XelEntityBase
-import net.voxmc.xel.s.SystemTickException
-import net.voxmc.xel.s.XelSystem
+import net.voxmc.xel.entity.Filter
+import net.voxmc.xel.entity.XelEntity
+import net.voxmc.xel.entity.XelEntityBase
+import net.voxmc.xel.system.SystemTickException
+import net.voxmc.xel.system.XelSystem
 
-open class XelEngine(final override val name: String) : Named
+open class XelEngine(val name: String)
 {
 	
 	@PublishedApi

@@ -1,6 +1,6 @@
-package net.voxmc.xel.e
+package net.voxmc.xel.entity
 
-import net.voxmc.xel.c.XelModule
+import net.voxmc.xel.module.XelModule
 import kotlin.reflect.KClass
 
 abstract class Filter : (XelEntity) -> Boolean

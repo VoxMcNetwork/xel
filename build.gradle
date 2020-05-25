@@ -1,34 +1,13 @@
 plugins {
     id 'maven-publish'
-    
-    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
 }
 
 
-group 'net.voxmc'
-version '0.0.2-SNAPSHOT'
-
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-}
+apply from: "https://voxmc.net/kotlin.gradle"
 
 
 targetCompatibility = JavaVersion.VERSION_14
 sourceCompatibility = JavaVersion.VERSION_14
-
-compileKotlin {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_13
-    kotlinOptions.freeCompilerArgs += ["-XXLanguage:+NewInference", "-Xopt-in=kotlin.ExperimentalStdlibApi"]
-}
-compileTestKotlin {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_13
-    kotlinOptions.freeCompilerArgs += ["-XXLanguage:+NewInference", "-Xopt-in=kotlin.ExperimentalStdlibApi"]
-}
 
 
 publishing {

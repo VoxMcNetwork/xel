@@ -1,8 +1,7 @@
-package net.voxmc.xel.e
+package net.voxmc.xel.entity
 
-import net.voxmc.xel.c.XelModule
+import net.voxmc.xel.module.XelModule
 import kotlin.reflect.KClass
-import kotlin.reflect.safeCast
 
 interface XelEntity
 {
@@ -61,6 +60,7 @@ open class XelEntityBase(final override val uuid: Long) : XelEntity
 	
 	override fun <C : XelModule> findModule(module: KClass<C>): C?
 	{
-		return module.safeCast(modules[module])
+		@Suppress("UNCHECKED_CAST")
+		return modules[module] as? C?
 	}
 }

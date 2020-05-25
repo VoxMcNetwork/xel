@@ -1,14 +1,14 @@
 package net.voxmc.xel
 
-import net.voxmc.xel.c.XelModuleBase
-import net.voxmc.xel.e.findModule
-import net.voxmc.xel.e.killModule
-import net.voxmc.xel.e.loadModule
-import net.voxmc.xel.s.XelSystemBase
+import net.voxmc.xel.module.XelModuleBase
+import net.voxmc.xel.entity.findModule
+import net.voxmc.xel.entity.killModule
+import net.voxmc.xel.entity.loadModule
+import net.voxmc.xel.system.XelSystemBase
 
 fun main()
 {
-	val engine = Xel.newEngine("test")
+	val engine = Xel.makeEngine("test")
 	engine.loadSystem(::Growth)
 	
 	val entity = engine.loadEntity()
